@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+  <meta name="author" content="marco_pesavento">
+  <title>AMRSR</title>
+  
+  <!-- CSS  -->
+  <link href="./style/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="./style/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+</head>
+
+<body data-gr-c-s-loaded="true">
+  
+  <!-- ********** Navigator ********** -->
+  <div class="navbar-fixed">
+    <nav class="maroom-box" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
+                                         <ul class="left hide-on-med-and-down">
+                                             <li><a class="nav-item waves-effect waves-light" href="#home">Home</a></li>
+                                             <li><a class="nav-item waves-effect waves-light" href="#abstract">Abstract</a></li>
+                                             <li><a class="nav-item waves-effect waves-light" href="#network">Approach</a></li>
+                                             <li><a class="nav-item waves-effect waves-light" href="#video">Video</a></li>
+                                             <li><a class="nav-item waves-effect waves-light" href="#paper">Paper</a></li>
+                                             <li><a class="nav-item waves-effect waves-light" href="#results">Results</a></li>
+                                             <li><a class="nav-item waves-effect waves-light" href="#reference">References</a></li>
+                                             <li><a class="nav-item waves-effect waves-light" href="#acknowledgement">Acknowledgement</a></li>
+                                         </ul>
+
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
+  
+  <!-- ********** Title and Authors ********** -->
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container scrollspy" id="home">
+
+        <h3 class="header center maroon-text">Super-resolution 3D Human Shape from a Single Low-Resolution Image</h3>
+
+      <br>
+
+      <div class="row center">
+        <h5 class="header col m4 s12">
+          <div class="author"><a href="https://marcopesavento.github.io/" target="blank"><font class="active-text">Marco Pesavento</font></a></div>
+          <!--<div class="school"><a href="https://www.utk.edu/" target="blank"><font class="active-text">Centre of Vision, Speech and Signal Processing</font></a></div>-->
+          <div class="school"><a href="https://www.surrey.ac.uk/centre-vision-speech-signal-processing/" target="blank"><font class="active-text">CVSSP</font></a></div>
+          <div class="school"><a href="https://www.surrey.ac.uk/" target="blank"><font class="active-text">University of Surrey</font></a></div>
+       
+        </h5>
+
+        <h5 class="header col m4 s12">
+          <div class="author"><a href="https://marcovolino.github.io/" target="blank"><font class="active-text">Marco Volino</font></a></div>
+          <div class="school"><a href="https://www.surrey.ac.uk/centre-vision-speech-signal-processing/" target="blank"><font class="active-text">CVSSP</font></a></div>
+          <div class="school"><a href="https://www.surrey.ac.uk/" target="blank"><font class="active-text">University of Surrey</font></a></div>
+          
+        </h5>
+
+        <h5 class="header col m4 s12">
+          <div class="author"><a href="https://www.surrey.ac.uk/people/adrian-hilton/" target="blank"><font class="active-text">Adrian Hilton</font></a></div>
+          <div class="school"><a href="https://www.surrey.ac.uk/centre-vision-speech-signal-processing/" target="blank"><font class="active-text">CVSSP</font></a></div>
+          <div class="school"><a href="https://www.surrey.ac.uk/" target="blank"><font class="active-text">University of Surrey</font></a></div>
+        </h5>
+
+       
+       
+        
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+
+      <!-- ********** Demo ********** -->
+      <div class="section">
+
+          <div class="row center">
+              <table>
+                  <tr>
+                      <td>
+                          <img class="responsive-img" src="./first_images/bounce405.png" width="200" /><br><div align="center"><b>256x256 input image</b></div>
+                      </td>
+                      <td>
+                          <img class="responsive-img" src="./first_images/ours_front.png" width="200" /><br><div align="center"><b>SuRS reconstruction (front)</b></div>
+                      </td>
+                      <td>
+                          <img class="responsive-img" src="./first_images/ours_back_fin.png" width="200" /><br><div align="center"><b>SuRS reconstruction (back)</b></div>
+                      </td>
+                      
+                  </tr>
+              </table>
+          </div>
+          
+      </div>
+
+      <!-- ********** Abstract ********** -->
+      <div class="row section scrollspy" id="abstract">
+          <div class="title">Abstract</div><br>
+          We propose a novel framework to reconstruct super-resolution human shape from a single low-resolution input image.
+          The approach overcomes limitations of existing approaches that reconstruct 3D human shape from a single image,
+          which require high-resolution images together with auxiliary data such as surface normal or a parametric model to
+          reconstruct high-detail shape. The proposed framework represents the reconstructed shape with a high-detail
+          implicit function. Analogous to the objective of 2D image super-resolution, the approach learns the mapping
+          from a low-resolution shape to its high-resolution counterpart and it is applied to reconstruct 3D shape
+          detail from low-resolution images. The approach is trained end-to-end employing a novel loss function which
+          estimates the information lost between a low and high-resolution representation of the same 3D surface shape.
+          Evaluation for single image reconstruction of clothed people demonstrates that our method achieves high-detail
+          surface reconstruction from low-resolution (256x256) images without auxiliary data. Extensive experiments
+          show that the proposed approach can estimate super-resolution human geometries with a significantly higher level
+          of detail than that obtained with previous approaches when applied to low-resolution images.
+      </div>
+
+      <!-- ********** SuRS approach ********** -->
+      <div class="section row scrollspy" id="network">
+          <div class="title">SuRS Approach</div><br>
+          <div class="row center">
+              <div class="col offset-l1">&nbsp;</div>
+              <div class="col l9">
+                  <div class="caption">Overview of SuRS</div>
+                  <img class="responsive-img" src="./network/arch.pdf" width="80%">
+              </div>
+              <div class="col offset-l1">&nbsp;</div>
+          </div>
+      </div>
+
+      <!-- ********** SuRS Video ********** -->
+      <div class="section row scrollspy" id="video">
+          <div class="title">Video</div><br>
+          <div class="row center">
+              <div class="col offset-l1">&nbsp;</div>
+              <div class="col l9">
+                  <div class="caption"></div>
+                  <img class="responsive-img" src="./network/arch.pdf" width="80%">
+              </div>
+              <div class="col offset-l1">&nbsp;</div>
+          </div>
+      </div>
+
+    <!-- ********** Paper ********** -->
+    <div class="section row scrollspy" id="paper">
+      <div class="title">Paper</div><br>
+      <div class="row">
+        <div class="col m3 s12 center">
+          <a href="https://arxiv.org/abs/2108.13697" target="_blank">
+            <img src="./icon/icon_pdf.png">
+          </a>
+          <br>
+          <a href="https://arxiv.org/abs/2108.13697" target="_blank"><font class="active-text">Main Paper</font></a>
+        </div>
+        <div class="col m3 s12 center">
+         <a href="10357-supp.pdf" target="_blank">
+            <img src="./icon/icon_pdf.png">
+          </a>
+          <br>
+          <a href="10357-supp.pdf" target="_blank"><font class="active-text">Supplementary Material</font></a>
+        </div>
+       
+        <div class="col m3 s12 center">
+          <a href="https://github.com/marcopesavento/Attention-based-Multi-Reference-Learning-for-Image-Super-Resolution" target="_blank">
+            <img src="./icon/github.png">
+          </a>
+          <br>
+          <a href="https://github.com/marcopesavento/Attention-based-Multi-Reference-Learning-for-Image-Super-Resolution" target="_blank"><font class="active-text">Code</font></a>
+        </div>
+       
+    </div>
+
+    <!-- ********** Citation ********** -->
+    <div class="row">
+      <div class="subtitle">Citation</div>
+      <div class="col l10 offset-l1">
+          <p>Marco Pesavento, Marco Volino, and Adrian Hilton, "Super-resolution 3D Human Shape from a Single Low-Resolution Image", IEEE European Conference on Computer Vision (ECCV), 2022.</p>
+      </div>
+    </div>
+    <div class="row">  
+      <div class="subtitle">Bibtex</div>
+      <div class="col l10 offset-l1">
+          <pre>
+TODO
+
+}
+        </pre>
+      </div>
+    </div>
+
+    
+
+    <!-- ********** Results ********** -->
+    <div class="section row scrollspy" id="results">
+      <div class="title">Results</div><br>
+      
+      <!-- ********** Quantitative evaluation ********** -->
+      <div class="row">
+        <div class="subtitle">Quantitative Comparisons</div><br>
+        <div class="col l8 offset-l2">
+          <img class="responsive-img" src="./results/quantitative.jpg">
+        </div>
+      </div>
+
+      <!-- ********** Qualitative evaluation ********** -->
+      <div class="row">
+        <div class="subtitle">Qualitative Comparisons</div><br>
+        <div class="row center">
+          <img class="responsive-img" src="./results/comparison.jpg">
+        </div>
+        
+
+      <!-- ********** Multiple references ********** -->
+      <div class="row">
+        <div class="subtitle">Real Data</div><br>
+        <div class="col l10 offset-l1">
+          <img class="responsive-img" src="./results/real.jpg">
+        </div>
+      </div>
+
+      
+
+
+    <!-- ********** References ********** -->
+    <div class="row section scrollspy" id="reference">
+      <div class="title">References</div>
+      <ul>
+        <li> 
+          <a href="http://www.liuyebin.com/deephuman/deephuman.html/" target="blank">
+              <font class="active-text">
+                  • <b>DeepHuman</b>: Z. Zheng et al., "DeepHuman: 3D Human Reconstruction from a Single Image", ICCV 2019.
+              </font>
+          </a>
+        </li>
+        <li>
+          <a href="https://shunsukesaito.github.io/PIFu/" target="blank">
+              <font class="active-text">
+                  • <b>PIFu</b>: S. Saito et al., “PIFu: Pixel-Aligned Implicit Function for High-Resolution Clothed Human Digitization”, ICCV, 2019.
+              </font>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/facebookresearch/pifuhd/" target="blank">
+              <font class="active-text">
+                  • <b>PIFuHD</b>: S. Saito et al., "PIFuHD: Multi-Level Pixel-Aligned Implicit Function for High-Resolution 3D Human Digitization", CVPR, 2020..
+              </font>
+          </a>
+        </li>
+        <li> 
+          <a href="https://github.com/simpleig/Geo-PIFu/" target="blank">
+              <font class="active-text">
+                  • <b>Geo-PIFu</b>: T. He et al., “Geo-PIFu: Geometry and Pixel Aligned Implicit Functions for Single-view Human Reconstruction”, NeurIPS, 2020.
+              </font>
+          </a>
+        </li>
+        <li> 
+          <a href="http://www.liuyebin.com/pamir/pamir.html/" target="blank">
+              <font class="active-text">
+                  • <b>PaMIR</b>: Z. Zheng et al., "PaMIR: Parametric Model-Conditioned Implicit Representation for Image-based Human Reconstruction", TPAMI, 2021.
+              </font>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ********** Acknowledgement ********** -->
+    <div class="row section scrollspy" id="acknowledgement">
+      <div class="title">Acknowledgement</div><br>
+       This research was supported by UKRI EPSRC Platform Grant EP/P022529/1.
+      </div>
+  <!-- ********** Foot ********** -->
+  <footer class="page-footer grey lighten-3">
+      <!-- <div class="row"> -->
+        <dir>
+            <script type='text/javascript' id='clustrmaps' src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=BTv5qEki-SYFssA-nfp-vsa9aV7QKmlFhjUrEIKlgW4&cmo=3acc3a&cmn=3acc3a&co=0061a6"></script>
+
+        </dir>
+      <!-- </div> -->
+    
+    <div class="footer-copyright center maroon-text">
+      Copyright © Marco Pesavento 2022
+    </div>
+  </footer>
+
+  <!-- ********** Script for sliding style when switching between tabs ********** -->
+  <script src="./style/jquery-2.1.1.min.js"></script>
+  <script src="./style/materialize.js"></script>
+  <script src="./style/init.js"></script>
+
+  
+
+  <!-- <div class="hiddendiv common"></div><div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div><div class="jvectormap-tip"></div> -->
+
+</body>
+</html>
