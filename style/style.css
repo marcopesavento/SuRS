@@ -31,7 +31,7 @@ body{
 .active-border:hover{
     border: 4px;
     border-style: solid;
-    color: #337AB7;
+    color: #19286b;
     cursor: pointer;
 }
 
